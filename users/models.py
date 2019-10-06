@@ -29,6 +29,14 @@ class User(AbstractUser):
         ( POSITION_ASSOCIATE1, "사원"),
     )
 
+    LANGUAGE_ENGLISH = "EN"
+    LANGUAGE_KOREAN = "KR"
+    LANGUAGE_CHOICES = ( (LANGUAGE_ENGLISH, "English"), (LANGUAGE_KOREAN, "Korean"))
+
+    CURRENCY_USD = "USD"
+    CURRENCY_KRW = "KRW"
+    CURRENCY_CHOICES = ( (LANGUAGE_ENGLISH, "English"), (LANGUAGE_KOREAN, "Korean"))
+
     photo = models.ImageField(null=True, blank=True)
     
     birthdate = models.DateField(null=True)
@@ -46,5 +54,8 @@ class User(AbstractUser):
     Address = models.TextField(null=True) 
     jobdesc = models.TextField(default="",blank=True)
     bio = models.TextField(default="",blank=True)
+    language = models.CharField(choices=LANGUAGE_CHOICES, max_length=2, blank=True)
+    currency = models.CharField(choices=CURRENCY_CHOICES, max_length=3, blank=True)
+    superhost = models.BooleanField(default=False)
     
     

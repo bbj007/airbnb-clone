@@ -40,7 +40,11 @@ DJANGO_APPS = [
 PROJECT_APPS = [ 
     "core.apps.CoreConfig",
     "users.apps.UsersConfig", 
-    "rooms.apps.RoomsConfig",]
+    "rooms.apps.RoomsConfig",
+    "reviews.apps.ReviewsConfig",
+    "reservations.apps.ReservationsConfig",
+    "lists.apps.ListsConfig",
+    "conversations.apps.ConversationsConfig",]
 
 THIRD_PARTY_APPS = [ "django_countries"]
 # Application definition
