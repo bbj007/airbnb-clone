@@ -37,7 +37,7 @@ class User(AbstractUser):
     CURRENCY_KRW = "KRW"
     CURRENCY_CHOICES = ( (LANGUAGE_ENGLISH, "English"), (LANGUAGE_KOREAN, "Korean"))
 
-    photo = models.ImageField(null=True, blank=True)
+    photo = models.ImageField(upload_to="photos", null=True, blank=True)
     
     birthdate = models.DateField(null=True)
     gender = models.CharField(

@@ -8,6 +8,14 @@ class Conversation(core_models.TimeStampedModel):
 
     def __str__(self):
         return str(self.created)
+    
+    def count_messages(self):
+        return self.messages.count()
+
+    def count_participants(self):
+        return self.participants.count()
+
+    count_participants.short_description = "Number of Participants"        
 
 class Message(core_models.TimeStampedModel):
 
@@ -16,4 +24,5 @@ class Message(core_models.TimeStampedModel):
     conversation = models.ForeignKey("Conversation",related_name="messages", on_delete=models.CASCADE)
 
     def __Str__(self):
-        return f"{sefl.user} says : {self.text}"
+        return f"{self.user} says : {self.message}"
+
